@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
 before_action :set_player,
+#skip before action only [show index]
 
   def index
     @players = Player.all
@@ -15,6 +16,7 @@ before_action :set_player,
 
   def create
     @player = Player.create(player_params)
+    # player associé au user
     if @player.save
       redirect_to player_path(@player)
     else
