@@ -1,0 +1,38 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner_image.jpg"  %>);">
+  <div class="container">
+
+    <div class="text">
+      <h4>We celebrate Football at its finest.</h4>
+      <h1>Top rating of the day</h1>
+      <div class="btn-green-flat">
+        <%= link_to "See all players", '#all-players', class: "text-btn-green-flat"%>
+      </div>
+    <%# Add anchor to all players %>
+    </div>
+  </div>
+</div>
+
+
+<div class="title">
+  <h2>Freshly added players</h2>
+  <p>Base ligne sur une ou deux lignes mais pas obligatoire c’est juste pour se représenter </p>
+</div>
+
+<div class="cards col-12 col-sm-6 mb-4">
+  <div class="bg-white rounded shadow h-100">
+   <div class="p-3 rounded-bottom d-flex flex-column">
+            <div class="d-flex align-items-end justify-content-between pt-4">
+            </div>
+    </div>
+  </div>
+</div>
+
+<div class="btn-green-flat">
+  <%= link_to "See more", '#all-players', class: "text-btn-green-flat"%>
+</div>
+
+<div class="title" id='all-players'>
+  <h2>All players</h2>
+  <p>Base ligne sur une ou deux lignes mais pas obligatoire c’est juste pour se représenter </p>
+</div>
