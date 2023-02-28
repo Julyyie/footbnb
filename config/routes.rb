@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root to: "pages#home"
-  resources :players do
+  # root to: "pages#home"
+  root to: "players#index"
+  resources :players, except: :index do
     resources :bookings, only: %i[create destroy]
   end
 
