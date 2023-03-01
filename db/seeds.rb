@@ -11,6 +11,9 @@ require "faker"
 # Créer des utilisateurs
 # user1 = etc
 
+Player.destroy_all
+User.destroy_all
+
 puts "start"
 puts "start seeding users"
 10.times do
