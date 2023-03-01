@@ -1,5 +1,17 @@
 <h1>dashboard</h1>
 
-<% players.each do |player| %>
-  <%= player.name %>
+<% @my_bookings.each do |booking| %>
+  <%= booking.player.name  %>
+  <%= booking.rent_start %>
+  <%= booking.rent_ending %>
+  <%= booking.status %>
+<% end %>
+<% @my_players.each do |player| %>
+  <%= player.name  %>
+  <%= player.age %>
+  <%= player.rating %>
+  <%= player.strong_foot %>
+  <%= player.club %>
+  <%= player.position %>
+  <%= link_to “edit”, edit_player_path(player), class: “btn btn-secondary” %>
 <% end %>
