@@ -36,15 +36,12 @@ puts "start seeding players"
     Player.create!(name: Faker::Sports::Football.player, rating: rand(50..100),
                   club: Faker::Sports::Football.team, position: Faker::Sports::Football.position,
                   age: rand(16..40), strong_foot: ["left foot", "right foot"].sample, user: User.all.sample,
-
-                  # player_photo: player_path = Rails.root.join('public', 'images')
-                  # player_01 = File.open(player_path)
-                  # PlayerModel.create(image: player_01)
                 )
   end
 end
 puts "finish seeds players"
 puts "ALL DONE"
+
 
 
 # user_id: user1.id
