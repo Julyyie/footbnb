@@ -1,0 +1,51 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner_image_02.jpg"  %>);">
+
+  <div class="container">
+
+        <div class="text">
+          <h4>We celebrate Football at its finest.</h4>
+          <h1>Top rating of the day</h1>
+          <div class="btn-green-flat">
+            <%= link_to "See all players", '#all-players', class: "text-btn-green-flat"%>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="title">
+      <h2>Freshly added players</h2>
+      <p>Base ligne sur une ou deux lignes mais pas obligatoire c’est juste pour se représenter </p>
+    </div>
+    <%#--------------------- Add 3 latest players -------------------------------------------------------%>
+
+
+    <%#--------------------- Add 3 latest players -------------------------------------------------------%>
+
+    <div class="title">
+      <h2>Search by filters</h2>
+      <p>Base ligne sur une ou deux lignes mais pas obligatoire c’est juste pour se représenter </p>
+    </div>
+
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+      <button class="btn" onclick="filterSelection('age')"> Age</button>
+      <button class="btn" onclick="filterSelection('rating')"> Rating</button>
+      <button class="btn" onclick="filterSelection('strong foot')"> Strong foot</button>
+      <button class="btn" onclick="filterSelection('position')"> Position</button>
+      <button class="btn" onclick="filterSelection('club')"> Club</button>
+    </div>
+
+    <%#--------------------- JULY filter -------------------------------------------------------%>
+
+    <div class="btn-green-flat">
+      <%= link_to "See more", '#all-players', class: "text-btn-green-flat"%>
+    </div>
+
+    <div class="title" id='all-players'>
+      <h2>All players</h2>
+      <p>Base ligne sur une ou deux lignes mais pas obligatoire c’est juste pour se représenter </p>
+    </div>
+  </div>
+</div>
