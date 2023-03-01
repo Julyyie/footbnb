@@ -21,23 +21,21 @@
     <%#--------------------- Add 3 latest players -------------------------------------------------------%>
 
 
+
+<div class="cards col-12 col-sm-6 mb-4">
+  <div class="bg-white rounded shadow h-100">
+   <div class="p-3 rounded-bottom d-flex flex-column">
+      <div class="d-flex align-items-end justify-content-between pt-4">
+      </div>
+
     <%#--------------------- Add 3 latest players -------------------------------------------------------%>
 
-    <div class="title">
-      <h2>Search by filters</h2>
-      <p>Base ligne sur une ou deux lignes mais pas obligatoire c’est juste pour se représenter </p>
     </div>
 
-    <div id="myBtnContainer">
-      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-      <button class="btn" onclick="filterSelection('age')"> Age</button>
-      <button class="btn" onclick="filterSelection('rating')"> Rating</button>
-      <button class="btn" onclick="filterSelection('strong foot')"> Strong foot</button>
-      <button class="btn" onclick="filterSelection('position')"> Position</button>
-      <button class="btn" onclick="filterSelection('club')"> Club</button>
-    </div>
 
-    <%#--------------------- JULY filter -------------------------------------------------------%>
+<div class="btn-green-flat">
+  <%= link_to "See more", '#all-players', class: "text-btn-green-flat"%>
+</div>
 
     <div class="btn-green-flat">
       <%= link_to "See more", '#all-players', class: "text-btn-green-flat"%>
@@ -49,3 +47,32 @@
     </div>
   </div>
 </div>
+
+<%# ------------------------ card edouard ------------------------------------%>
+
+<div class="container">
+  <div class="cards">
+
+
+    <% @players.each do |player| %>
+
+      <div class="card-player border">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-info p-3">
+          <div>
+            <h2><%= player.name %></h2>
+            <p>description du joueur</p>
+          </div>
+          <h2 class="cards-price">100€</h2>
+          <h3><%= player.rating %></h3>
+          <a class="btn btn-ghost" href="#">View details</a>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+
+
+<%# ------------------------ card edouard ------------------------------------%>
