@@ -1,0 +1,13 @@
+#ul-filters {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.filter {
+  width: 250px;
+	background-color: $grey-04;
+	border-radius: 10px;
+  text-align: center;
+  padding: 15px 0px;
+  text-decoration: none;
+}
