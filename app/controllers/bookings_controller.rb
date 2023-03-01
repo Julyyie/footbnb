@@ -6,9 +6,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.create(booking_params)
+    @player = Player.find(params[:player_id])
+    @booking = Booking.new(booking_params)
+    # @booking.player = @player
+
     if @booking.save
-      redirect_to dashboard_path(@booking)
+      redirect_to booking_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -20,8 +23,8 @@ class BookingsController < ApplicationController
 
   private
 
-  def player_params
-    params.require(:booking).permit(:user_id, :player_id, :rent_status)
+  def booking_params
+    params.require(:booking).permit(:rent_start, :rent_ending)
   end
 
 end

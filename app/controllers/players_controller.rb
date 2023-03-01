@@ -10,6 +10,7 @@ skip_before_action :authenticate_user!, only: :index
 
   def show
     @player = Player.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
