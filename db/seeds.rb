@@ -11,6 +11,8 @@ require "faker"
 # Créer des utilisateurs
 # user1 = etc
 
+puts "start"
+puts "start seeding users"
 10.times do
   User.create!(
     first_name: Faker::Name.first_name,
@@ -19,6 +21,9 @@ require "faker"
     password: "mdpmdp"
   )
 end
+puts "finish seeds user"
+
+puts "start seeding players"
 
 30.times do
   name = Faker::Sports::Football.player
@@ -30,6 +35,9 @@ end
                   age: rand(16..40), strong_foot: ["left foot", "right foot"].sample, user: User.all.sample)
   end
 end
+puts "finish seeds players"
+puts "ALL DONE"
+
 
 # user_id: user1.id
 #il faut affecter un id aux cards(players), de manière à ce qu'un user sois rattacher à plusierus cards_id(relation one to many)
