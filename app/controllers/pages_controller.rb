@@ -4,4 +4,12 @@ class PagesController < ApplicationController
   def home
   end
 
+  def dashboard
+
+
+    # ceux que je mets en location
+    @my_players = @current_user.players
+
+  end
+
 end
