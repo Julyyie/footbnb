@@ -63,7 +63,7 @@
             </div>
             <h2 class="cards-price">100€</h2>
             <h3><%= player.rating %></h3>
-            <a class="btn btn-ghost" href="#">View details</a>
+            <%=link_to "Rent", player_path(player), class: 'btn btn-ghost' %>
           </div>
         </div>
       <% end %>
