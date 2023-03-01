@@ -1,24 +1,27 @@
 // Import page-specific CSS files here.
 @import "home";
 
-.container {
-  width: 90%;
-  padding: 10px;
-
-}
-
 .title {
 text-align: left;
-background: linear-gradient($grey-05, white);
-padding-top: 86px;}
+}
 
 .freshly-added h2 {
 font-weight: 700;
 font-size: 50px;
+line-height: 90%;
 }
 
 .freshly-added p {
   font-weight: 300;
   font-size: 18px;
   line-height: 20px;
+}
+
+.myBtnContainer {
+  padding: 100px 0px
+}
+
+.cards {
+  padding: 100px 0px
+
 }
