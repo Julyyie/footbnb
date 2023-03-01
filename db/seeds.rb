@@ -35,11 +35,13 @@ puts "start seeding players"
   if player.nil?
     Player.create!(name: Faker::Sports::Football.player, rating: rand(50..100),
                   club: Faker::Sports::Football.team, position: Faker::Sports::Football.position,
-                  age: rand(16..40), strong_foot: ["left foot", "right foot"].sample, user: User.all.sample)
+                  age: rand(16..40), strong_foot: ["left foot", "right foot"].sample, user: User.all.sample,
+                )
   end
 end
 puts "finish seeds players"
 puts "ALL DONE"
+
 
 
 # user_id: user1.id
