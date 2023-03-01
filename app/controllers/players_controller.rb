@@ -8,6 +8,7 @@ before_action :set_player,
 
   def show
     @player = Player.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
