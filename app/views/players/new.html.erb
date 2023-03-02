@@ -1,0 +1,17 @@
+
+  <h1> Add a new player </h1>
+
+
+<%= simple_form_for(@player) do |f| %>
+  <%= f.input :club %>
+  <%= f.input :position%>
+  <%= f.input :name %>
+  <%= f.input :age %>
+  <%= f.input :rating%>
+  <%= f.input :strong_foot %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%#= f.input, :photo,  as: :file %>
+  <%#= f.input :player_photo, as: :string, input_html: { data: { flatpickr_target: "playerPhoto" } }  %>
+  <%= f.submit 'Add your new player !' %>
+<% end %>

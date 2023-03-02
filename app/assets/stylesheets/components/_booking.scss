@@ -1,26 +1,64 @@
-.booking h1 {
-  position: relative;
-  text-align: center;
+
+h1 {
+  padding: 20px 150px;
+
+}
+.container-fluid-show {
+
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 150px;
 }
 
-.formulaire .booking {
-  position: relative;
-  top: 10px;
-  left: 20px;
+.cardz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+  width: 250px;
+
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  &-player {
+    margin-bottom: 20px;
+
+    img {
+      display: block;
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    &.xl-6 {
+      max-width: 50%;
+    }
+  }
 }
 
-.cardz-player {
-  width: 200px;
-  height: 300px;
-  justify-content: center;
-}
-
-.cardz-player img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.cardz-info {
-  font-size: 18px;
+.shadow-effect {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
