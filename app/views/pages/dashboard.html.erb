@@ -1,19 +1,71 @@
-<h1>dashboard</h1>
 
-<% @my_bookings.each do |booking| %>
-  <%= booking.player.name  %>
-  <%= booking.rent_start %>
-  <%= booking.rent_ending %>
-  <%= booking.status %>
-<% end %>
+<div class="container-fluid-dash">
+  <h1>Mon profil</h1>
+  <p>Bienvenue user.first_name</p>
 
-<% @my_players.each do |player| %>
-  <%= player.name  %>
-  <%= player.age %>
-  <%= player.rating %>
-  <%= player.strong_foot %>
-  <%= player.club %>
-  <%= player.position %>
+  <div class="row mt-5">
 
-  <%= link_to "edit", edit_player_path(player), class: "btn btn-secondary" %>
-<% end %>
+    <div class="user-rents col-8">
+    <h2>My rents</h2>
+
+      <% @my_bookings.each do |booking| %>
+
+        <%= booking.player.name  %>
+        <%= booking.rent_start %>
+        <%= booking.rent_ending %>
+        <%= booking.status %>
+      <% end %>
+
+      <div class="card-player-dashboard d-flex">
+
+      <img src="/assets/player_01-7b4d48d04f8ec9e04260d78da2cb2a68ba19f19cf574ef5b30e79ff9a682ccc1.jpg" style="
+    width: 590px; height: 350px;">
+
+         <div class="card-info-dash p-3">
+            <% @my_players.each do |player| %>
+              <h2><%= player.name %></h2>
+              <p>description du joueur</p>
+              <%= player.rating %>
+
+              <div class="tags-dash p-3 d-flex">
+                <div class="tag-dash"><%= player.age %></div>
+                <div class="tag-dash"><%= player.rating %></div>
+                <div class="tag-dash"><%= player.strong_foot %></div>
+                <div class="tag-dash"><%= player.club %></div>
+                <div class="tag-dash"><%= player.position %></div>
+              </div>
+
+            <div class="price-dash p-3 d-flex">
+              <h2>100€</h2>
+            </div>
+            <div>
+          </div>
+            <%= link_to "edit", edit_player_path(player), class: "btn btn-secondary" %>
+          <% end %>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="user-infos col-4">
+    <div class="status">
+      <h2>Status</h2>
+        <div class="status-dash">
+        <i class="fa-regular fa-circle"></i>
+        <p id="status-p">You have .. pending status</p>
+        <%# methode status %>
+        </div>
+      </div>
+      <div class="messages">
+        <h2>Messages</h2>
+        <div class="messages-dash">
+        <p>You have 0 new message</p>
+        <%# methode status %>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.card-player-dashboard {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: $grey-05;
+}
+
+.card-info-dash {
+display: block;
+}
+
+.tags-dash {
+  display: flex;
+
+}
+
+.tag-dash {
+  margin-left: 20px;
+  width: 100px;
+  padding: 5px 0px;
+  background-color: $green;
+  text-align: center;
+  border-radius: 5px;
+  color: $grey-01;
+}
