@@ -19,9 +19,10 @@ skip_before_action :authenticate_user!, only: :index
 
   def create
     @player = Player.create(player_params)
+    @player.user = current_user
     # player associé au user
     if @player.save
-      redirect_to player_path(@player)
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -48,6 +49,6 @@ skip_before_action :authenticate_user!, only: :index
   end
 
   def player_params
-    params.require(:player).permit(:first_name, :last_name, :club, :position, :player_photo)
+    params.require(:player).permit(:name, :club, :position, :rating, :age, :description, :price, :strong_foot, :player_photo)
   end
 end
