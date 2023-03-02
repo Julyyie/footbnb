@@ -1,13 +1,29 @@
-<div class = "container">
-<br>
-<br>
-<br>
-<div class = "booking">
+  <br>
+  <br>
+  <br>
   <h1>Rent your card</h1>
+<div class = "container-fluid-show">
 
-<%= simple_form_for [@player, @booking], data: { controller: 'flatpickr' } do |f| %>
-  <%= f.input :rent_start, as: :string, input_html: { data: { flatpickr_target: "rentStart" } }  %>
-  <%= f.input :rent_ending, as: :string, input_html: { data: { flatpickr_target: "rentEnding" } } %>
-  <%= f.submit 'Recruit your player for this period of time' %>
-<% end %>
+
+  <div class = "cardz col-4">
+          <div class="cardz-player border">
+            <% num = rand(1..5) %>
+            <%= image_tag "player_0#{num}.jpg" %>
+          </div>
+          <div class="cardz-info xl-6">
+            <div>
+              <h2><%= @player.name %></h2>
+            </div>
+            <h2 class="cardsz-price"></h2>
+            <h3><%= @player.rating %></h3>
+          </div>
+        </div>
+    <div class="form-rent col-8">
+        <%= simple_form_for [@player, @booking], data: { controller: 'flatpickr' } do |f| %>
+          <%= f.input :rent_start, as: :string, input_html: { data: { flatpickr_target: "rentStart" }, class: 'shadow-effect' } %>
+          <%= f.input :rent_ending, as: :string, input_html: { data: { flatpickr_target: "rentEnding" }, class: 'shadow-effect' } %>
+          <%= f.submit 'Recruit your player for this period of time', class: 'btn btn-success shadow-effect' %>
+      <% end %>
+    </div>
+
 </div>
