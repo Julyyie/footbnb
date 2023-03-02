@@ -1,5 +1,13 @@
+<div class = "container">
+<br>
+<br>
+<br>
+<div class = "booking">
+  <h1>Rent your card</h1>
 <%= simple_form_for [@player, @booking], data: { controller: 'flatpickr' } do |f| %>
   <%= f.input :rent_start, as: :string, input_html: { data: { flatpickr_target: "rentStart" } }  %>
   <%= f.input :rent_ending, as: :string, input_html: { data: { flatpickr_target: "rentEnding" } } %>
   <%= f.submit 'Recruit your player for this period of time' %>
 <% end %>
+</div>
+</div>
