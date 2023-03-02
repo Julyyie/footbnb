@@ -6,10 +6,8 @@ class PagesController < ApplicationController
 
   def dashboard
 
-
-    # ceux que je mets en location
-    @my_players = @current_user.players
+    @my_players = current_user.players
+    @my_bookings = current_user.bookings
 
   end
-
 end
