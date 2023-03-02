@@ -53,7 +53,7 @@
 
       <% @players.each do |player| %>
         <div>
-          <div class="card-player border">
+          <div class="card-player">
             <% num = rand(1..5) %>
             <%= image_tag "player_0#{num}.jpg" %>
           </div>
@@ -63,7 +63,6 @@
               <p>description du joueur</p>
             </div>
             <h2 class="cards-price">100€</h2>
-            <h3><%= player.rating %></h3>
             <%=link_to "Rent", player_path(player), class: 'btn btn-ghost' %>
           </div>
         </div>

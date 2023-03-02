@@ -1,7 +1,7 @@
 .text-btn-green-flat {
   text-decoration: none;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
 	color: $grey-01;
 }
 
@@ -11,7 +11,9 @@
 	background-color: $green;
 	border-radius: 10px;
   text-align: center;
-  width: 250px;
+  width: 300px;
+}
 
-
+.btn-green-flat :hover {
+  color: $grey-05;
 }

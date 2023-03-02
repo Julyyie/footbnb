@@ -1,0 +1,53 @@
+.container-fluid-dash {
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.user-rent {
+  margin-right: 20px;
+}
+h1 {
+font-size: 50px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 22px;
+  font-weight: 400;
+  color: $grey-04;
+}
+
+.status-dash {
+  display: flex;
+  align-items: center;
+  padding: 20px 5px;
+  background-color: $grey-05;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.fa-regular {
+  color: $green;
+  padding: 10px;
+}
+
+.status-p {
+  margin: 0 !important;
+}
+
+.messages {
+  margin-top: 30px;
+
+}
+.messages-dash {
+  display: flex;
+  align-items: center;
+  padding: 70px 20px;
+  background-color: $grey-05;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
