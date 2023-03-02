@@ -1,6 +1,16 @@
+
+<%= form_with url: user_session_path, method: :get, class: "searchbar d-flex" do %>
+  <%= text_field_tag :query,
+  params[:query],
+  class: "form-control",
+  placeholder: "Search a player by name"%>
+  <%= submit_tag "Search"%>
+
+<% end %>
+
 <%#--------------------- Banner -------------------------------------------------------%>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner_image_02.jpg"  %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner_image.jpg"  %>);">
   <div class="container">
     <div class="text">
         <h4>We celebrate Football at its finest.</h4>
@@ -62,7 +72,10 @@
               <h2><%= player.name %></h2>
               <p>description du joueur</p>
             </div>
-            <h2 class="cards-price">100€</h2>
+
+            <h2 class="cards-price"></h2>
+            <h3><%= player.rating %></h3>
+
             <%=link_to "Rent", player_path(player), class: 'btn btn-ghost' %>
           </div>
         </div>
