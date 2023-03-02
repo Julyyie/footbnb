@@ -4,9 +4,17 @@ skip_before_action :authenticate_user!, only: :index
 # before_action :set_player, only: [:show]
 #skip before action only [show index]
 
-  def index
+def index
+  if params[:query].present?
+    sql_query = <<~SQL
+      players.name ILIKE :query
+    SQL
+    @players = Player.joins(:director).where(sql_query, query: "%#{params[:query]}%")
+  else
     @players = Player.all
   end
+end
+
 
   def show
     @player = Player.find(params[:id])
@@ -40,6 +48,7 @@ skip_before_action :authenticate_user!, only: :index
     @player.destroy
     redirect_to player_path, status: :see_other
   end
+
 
   private
 
