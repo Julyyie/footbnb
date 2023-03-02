@@ -22,24 +22,24 @@
     width: 590px; height: 350px;">
 
          <div class="card-info-dash p-3">
-              <% @my_players.each do |player| %>
+            <% @my_players.each do |player| %>
               <h2><%= player.name %></h2>
               <p>description du joueur</p>
               <%= player.rating %>
 
-          <div class="tags-dash p-3 d-flex">
-            <div class="tag-dash"><%= player.age %></div>
-            <div class="tag-dash"><%= player.rating %></div>
-            <div class="tag-dash"><%= player.strong_foot %></div>
-            <div class="tag-dash"><%= player.club %></div>
-            <div class="tag-dash"><%= player.position %></div>
-          </div>
+              <div class="tags-dash p-3 d-flex">
+                <div class="tag-dash"><%= player.age %></div>
+                <div class="tag-dash"><%= player.rating %></div>
+                <div class="tag-dash"><%= player.strong_foot %></div>
+                <div class="tag-dash"><%= player.club %></div>
+                <div class="tag-dash"><%= player.position %></div>
+              </div>
 
-          <div class="price-dash p-3 d-flex">
-            <h2>100€</h2>
+            <div class="price-dash p-3 d-flex">
+              <h2>100€</h2>
+            </div>
+            <div>
           </div>
-          <div>
-        </div>
             <%= link_to "edit", edit_player_path(player), class: "btn btn-secondary" %>
           <% end %>
         </div>
