@@ -1,32 +1,6 @@
-.card-player-dashboard {
-  display: flex;
-  align-items: center;
-  border-radius: 10px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  background-color: $grey-05;
-}
-
-.card-info-dash {
-display: block;
-}
-
-.tags-dash {
-  display: flex;
-
-}
-
-.tag-dash {
-  margin-left: 20px;
-  width: 100px;
-  padding: 5px 0px;
-  background-color: $green;
-  text-align: center;
-  border-radius: 5px;
-  color: $grey-01;
-}
-
 
 .card-product {
+  border-radius: 10px;
   overflow: hidden;
   height: 120px;
   background: white;
@@ -57,4 +31,38 @@ display: block;
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+
+.my-player-card {
+
+  height: 300px;
+  overflow: hidden;
+  background-color: $grey-05;
+  border-radius: 15px;
+}
+
+.my-player-info {
+  padding: 60px, 60px;
+}
+
+.my-player-info h2 {
+  padding-top: 20px;
+  font-size: 32px;
+  font-weight: 500;
+
+}
+
+.tag-player p {
+color: $grey-01;
+font-weight: 700;
+text-align: start;
+margin: auto;
+
+}
+
+.my-player-img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
 }

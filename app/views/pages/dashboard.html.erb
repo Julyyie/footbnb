@@ -2,11 +2,11 @@
   <h1>Mon profil</h1>
   <p>Bienvenue <%= current_user.first_name %></p>
 
+  <%#--------------------- Recruiting -------------------------------------------------------%>
+
   <h2>Players I recruited</h2>
 
-
-
-  <div class="cards">
+  <div class="cards-dash">
     <% @my_bookings.each do |booking| %>
       <div class="card-product">
         <% num = rand(1..5) %>
@@ -20,51 +20,47 @@
       </div>
     <% end %>
   </div>
+  <%#--------------------- Recruiting -------------------------------------------------------%>
+  <%#--------------------- Created players -------------------------------------------------------%>
 
 
+  <h2>My players</h2>
 
 
+  <div class="my-player-card">
+    <div class="my-player-img">
+      <img src="https://s.hs-data.com/bilder/spieler/gross/284095.jpg" alt="">
+    </div>
 
+    <div class="card-info-dash">
+      <% @my_players.each do |player| %>
+      <% if player.bookings.size > 0 %>
 
-<h2>My players</h2>
-
-
-
-
-
-  <div class="card-info-dash">
-    <% @my_players.each do |player| %>
-
-
-  <% if player.bookings.size > 0 %>
-
-
-    <div class="border">
-      <h5><%= player.name %></h5>
-      <h6>Price/day: <%= player.price %></h6>
-      <p>description du joueur You can move this code into a module and include it into any model that supports filtering:</p>
-
-      <div class="tags-dash d-flex">
-        <div class="tag-dash"><p>Age: <%= player.age %></p></div>
-        <div class="tag-dash"><p>Rating: <%= player.rating %></p></div>
-        <div class="tag-dash"><p>Strong Foot: <%= player.strong_foot %></p></div>
-        <div class="tag-dash"><p>Club: <%= player.club %></p></div>
-        <div class="tag-dash"><p>Position: <%= player.position %></p></div>
-      </div>
-      <div class="bookings">
-      <%player.bookings.each do |booking| %>
-      <div class="border">
-      <p>Booked By: <%= booking.user.first_name %></p>
-        <p><%= booking.status %></p>
-        <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch} %>
-        <%= link_to "Decline", decline_path(booking), data: {turbo_method: :patch}  %>
+      <div class="my-player-info">
+        <h2><%= player.name %></h2>
+        <h6>Price/day: <%= player.price %></h6>
+        <p><%= player.description %></p>
+        <div class="tags-dash">
+          <div class="tag-player"><p>Age: <%= player.age %></p></div>
+          <div class="tag-player"><p>Rating: <%= player.rating %></p></div>
+          <div class="tag-player"><p>Strong Foot: <%= player.strong_foot %></p></div>
+          <div class="tag-player"><p>Club: <%= player.club %></p></div>
+          <div class="tag-player"><p>Position: <%= player.position %></p></div>
         </div>
-        <% end %>
+        <div class="my-player-bookings">
+        <%player.bookings.each do |booking| %>
+        <div class="my-player-booked">
+        <p>Booked By: <%= booking.user.first_name %></p>
+          <p><%= booking.status %></p>
+          <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch}, class:"btn btn-green-tiny" %>
+          <%= link_to "Decline", decline_path(booking), data: {turbo_method: :patch}, class:"btn btn-grey-stroke"%>
+          </div>
+          <% end %>
 
 
 
       </div>
-
+  </div>
 
 
 
