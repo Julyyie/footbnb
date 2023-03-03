@@ -3,6 +3,7 @@
 
 
 <%= simple_form_for(@player) do |f| %>
+
   <%= f.input :club, input_html: { class: 'shadow-effect' } %>
   <%= f.input :position, input_html: { class: 'shadow-effect' }%>
   <%= f.input :name, input_html: { class: 'shadow-effect' } %>
@@ -14,4 +15,5 @@
   <%= f.submit 'Add your new player !', class: "sub" %>
 <% end %>
   <%#= f.input, :photo,  as: :file %>
+
   <%#= f.input :player_photo, as: :string, input_html: { data: { flatpickr_target: "playerPhoto" } }  %>
