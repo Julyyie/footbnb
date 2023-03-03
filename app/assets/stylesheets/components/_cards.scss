@@ -8,27 +8,33 @@
 .card-player .image-player {
   height: 300px;
   width: 100%;
-  object-fit: cover;
+  object-fit:contain;
+
 
 }
 
 .card-player h2 {
+  color: $grey-01;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+}
+.card-player h3 {
   color: $grey-01;
   font-size: 16px;
   font-weight: bold;
   text-align: left;
 }
 
+
 .card-player p {
-  font-size: 12px;
+  font-size: 16px;
   color: $grey-03;
 }
 
-.card-player-infos {
-  padding: 40px;
-  display: block;
-  align-items: flex-end;
-  position: relative;
+.card-player-info {
+  padding: 20px;
+
 }
 
 

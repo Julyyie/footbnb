@@ -18,7 +18,7 @@
 
         <% end %>
         <div class="btn-green-flat">
-          <%= link_to "See all players", '#all-players', class: "text-btn-green-flat"%>
+          <%= link_to "See all players", '#all-players', class: "btn-green-flat", class: "text-btn-green"%>
         </div>
     </div>
   </div>
@@ -60,12 +60,12 @@
             </div>
 
             <div class="card-player-price">
-              <p><%= player.price %></p>
-              <p><%= player.rating %></p>
+              <h3>Prix:<%= player.price %>€</h3>
+              <h3>Rating:<%= player.rating %>/100</h3>
             </div>
+          <%=link_to "Rent", player_path(player), class: 'btn btn-outline-secondary p-2 flex-grow-0' %>
           </div>
 
-          <%=link_to "Rent", player_path(player), class: 'btn btn-ghost' %>
         </div>
     <% end %>
   </div>
@@ -102,9 +102,10 @@
         <div class="card-player">
           <% if player.player_photo %>
             <%= image_tag player.player_photo, class: 'image-player' %>
-            <% else %>
+              <% else %>
             <img class="image-player" src="https://tbtech.co/wp-content/uploads/2021/03/Boris-Paillard-200ppi-scaled.jpg" alt="">
           <% end %>
+
 
           <div class="card-player-info">
             <div>
@@ -113,12 +114,12 @@
             </div>
 
             <div class="card-player-price">
-              <p><%= player.price %></p>
-              <p><%= player.rating %></p>
+              <h3>Prix:<%= player.price %>€</h3>
+              <h3>Rating:<%= player.rating %>/100</h3>
             </div>
+          <%=link_to "Rent", player_path(player), class: 'btn btn-outline-secondary p-2 flex-grow-0' %>
           </div>
 
-          <%=link_to "Rent", player_path(player), class: 'btn btn-ghost' %>
         </div>
     <% end %>
   </div>
