@@ -45,7 +45,7 @@ user2 = User.create!(first_name: "Julie", last_name: "Juillet", email: "julie.ju
 user3 = User.create!(first_name: "Edouardo", last_name: "Vitamine",email: "edouardo.vitamine@hotmail.com", password: "mdpmdp")
 user4 = User.create!(first_name: "Xavier", last_name: "Niel", email: "xavier.niel@hotmail.com", password: "mdpmdp")
 
-player1 = Player.create!(name: "Lionel Messi", rating: 96, price: 980, club: "PSG", position: "Striker", age: 38, strong_foot: "Left", user: User.all.sample, description: "Probably the best player of all time ", player_photo: )
+player1 = Player.create!(name: "Lionel Messi", rating: 96, price: 980, club: "PSG", position: "Striker", age: 38, strong_foot: "Left", user: User.all.sample, description: "Probably the best player of all time ")
 player2 = Player.create!(name: "Cristiano Ronaldo", rating: 96, price: 980, club: "Al-Nasr", position: "Striker", age: 38, strong_foot: "Right", user: User.all.sample, description: "The guy is a machine")
 player3 = Player.create!(name: "Pixie Habousha", rating: 99, price: 990, club: "PIXIE FC", position: "Striker", age: 27, strong_foot: "Right", user: User.all.sample, description: "Definitely the best female player of all time ")
 player4 = Player.create!(name: "Killian Mbappé", rating: 95, price: 970, club: "PSG", position: "Striker", age: 24, strong_foot: "Right", user: User.all.sample, description: "Young French prodigy")
