@@ -1,18 +1,17 @@
-.text-btn-grey-stroke {
+.text-btn-green-tiny {
   text-decoration: none;
   font-weight: 400;
   font-size: 14px;
 	color: $grey-01;
 }
 
-.btn-grey-stroke  {
+.btn-green-tiny  {
   margin: 10px 10px;
   padding: 10px 10px;
+	background-color: $green;
 	border-radius: 10px;
-  border: solid 1px $grey-01;
-  text-align: center;
-}
+  text-align: center;}
 
-.btn-grey-stroke :hover {
-  color: $grey-01;
+.btn-green-tiny :hover {
+  color: $grey-05;
 }

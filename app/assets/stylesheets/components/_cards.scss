@@ -1,50 +1,35 @@
 .card-player {
-  background: $grey-01;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
+  background: $grey-05;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-player > img {
-  height: 400px;
+
+.card-player .image-player {
+  height: 300px;
   width: 100%;
   object-fit: cover;
+
 }
 
 .card-player h2 {
+  color: $grey-01;
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
   text-align: left;
 }
 
-.card-player h3 {
-  font-size: 12px;
-  font-weight: 300;
-  margin: 0;
-  text-align: right;
-}
-
-
 .card-player p {
   font-size: 12px;
-  opacity: .7;
-  margin: 0;
+  color: $grey-03;
 }
 
-
-.card-player .card-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
+.card-player-infos {
+  padding: 40px;
+  display: block;
   align-items: flex-end;
+  position: relative;
 }
-
-.card-info a {
-  color: grey;
-  border: solid;
-  cursor: grab;
-}
-
 
 
 

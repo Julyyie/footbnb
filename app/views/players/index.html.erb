@@ -6,16 +6,17 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner_image.jpg"  %>);">
   <div class="container">
     <div class="text">
-        <h4>We celebrate Football at its finest.</h4>
-        <h1>Top rating of the day</h1>
-        <%= form_with url: root_path, method: :get, class: "searchbar d-flex" do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Search a player by name"%>
-        <%= submit_tag "Search", class: "btn btn-success"%>
+        <h1 class="mb-5">Top rating of the day</h1>
+        <h4 class="mb-5">We celebrate Football at its finest.</h4>
 
-<% end %>
+        <%= form_with url: root_path, method: :get, class: "searchbar" do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search a player by name"%>
+          <%= submit_tag "Search", class: "btn btn-success", style: "width: 200px"%>
+
+        <% end %>
         <div class="btn-green-flat">
           <%= link_to "See all players", '#all-players', class: "text-btn-green-flat"%>
         </div>
@@ -40,29 +41,31 @@
 
 
 
-    <div class="cards">
+  <div class="cards">
 
 
-      <% @recent_players.each do |player| %>
-        <div>
-          <div class="card-player">
-            <% num = rand(1..5) %>
-            <%= image_tag "player_0#{num}.jpg" %>
-          </div>
-          <div class="card-info p-3">
+    <% @recent_players.each do |player| %>
+        <div class="card-player">
+          <% num = rand(1..5) %>
+          <%= image_tag "player_0#{num}.jpg", class: 'image-player' %>
+
+
+          <div class="card-player-info">
             <div>
               <h2><%= player.name %></h2>
-              <p>description du joueur</p>
+              <p><%= player.description %></p>
             </div>
 
-            <h2 class="cards-price"></h2>
-            <h3><%= player.rating %></h3>
-
-            <%=link_to "Rent", player_path(player), class: 'btn btn-ghost' %>
+            <div class="card-player-price">
+              <p><%= player.price %></p>
+              <p><%= player.rating %></p>
+            </div>
           </div>
+
+          <%=link_to "Rent", player_path(player), class: 'btn btn-ghost' %>
         </div>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 
 
 <hr>
@@ -88,29 +91,31 @@
   <%# ------------------------ cards ------------------------------------------------------------------%>
 
 
-    <div class="cards">
+     <div class="cards">
 
 
-      <% @players.each do |player| %>
-        <div>
-          <div class="card-player">
-            <% num = rand(1..5) %>
-            <%= image_tag "player_0#{num}.jpg" %>
-          </div>
-          <div class="card-info p-3">
+    <% @recent_players.each do |player| %>
+        <div class="card-player">
+          <% num = rand(1..5) %>
+          <%= image_tag "player_0#{num}.jpg", class: 'image-player' %>
+
+
+          <div class="card-player-info">
             <div>
               <h2><%= player.name %></h2>
-              <p>description du joueur</p>
+              <p><%= player.description %></p>
             </div>
 
-            <h2 class="cards-price"></h2>
-            <h3><%= player.rating %></h3>
-
-            <%=link_to "Rent", player_path(player), class: 'btn btn-ghost' %>
+            <div class="card-player-price">
+              <p><%= player.price %></p>
+              <p><%= player.rating %></p>
+            </div>
           </div>
+
+          <%=link_to "Rent", player_path(player), class: 'btn btn-ghost' %>
         </div>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 
   <%# ------------------------ cards ------------------------------------------------------------------%>
 
