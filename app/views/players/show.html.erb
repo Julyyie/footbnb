@@ -8,8 +8,11 @@
 
   <div class = "cardz col-4">
           <div class="cardz-player border">
-            <% num = rand(1..5) %>
-            <%= image_tag "player_0#{num}.jpg" %>
+           <% if @player.player_photo %>
+            <%= image_tag @player.player_photo%>
+              <% else %>
+            <img src="https://tbtech.co/wp-content/uploads/2021/03/Boris-Paillard-200ppi-scaled.jpg" alt="">
+          <% end %>
           </div>
           <div class="cardz-info xl-6">
             <div>
