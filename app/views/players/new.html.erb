@@ -1,17 +1,17 @@
 
-  <h1> Add a new player </h1>
+  <h1 class="titlez border shadow-effect"> Add a new player </h1>
 
 
 <%= simple_form_for(@player) do |f| %>
-  <%= f.input :club %>
-  <%= f.input :position%>
-  <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.input :rating%>
-  <%= f.input :strong_foot %>
-  <%= f.input :price %>
-  <%= f.input :description %>
+  <%= f.input :club, input_html: { class: 'shadow-effect' } %>
+  <%= f.input :position, input_html: { class: 'shadow-effect' }%>
+  <%= f.input :name, input_html: { class: 'shadow-effect' } %>
+  <%= f.input :age, input_html: { class: 'shadow-effect' } %>
+  <%= f.input :rating, input_html: { class: 'shadow-effect' } %>
+  <%= f.input :strong_foot, input_html: { class: 'shadow-effect' } %>
+  <%= f.input :price, input_html: { class: 'shadow-effect' } %>
+  <%= f.input :description, input_html: { class: 'shadow-effect' } %>
+  <%= f.submit 'Add your new player !', class: "sub" %>
+<% end %>
   <%#= f.input, :photo,  as: :file %>
   <%#= f.input :player_photo, as: :string, input_html: { data: { flatpickr_target: "playerPhoto" } }  %>
-  <%= f.submit 'Add your new player !' %>
-<% end %>
