@@ -1,18 +1,20 @@
 
+  .btn-green-flat  {
+    margin: 30px 0px;
+    color: $grey-01;
+    padding: 20px 70px;
+    background-color: $green;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
 
-.btn-green-flat  {
-  margin: 30px 0px;
-  padding: 20px 70px;
-	background-color: $green;
-	border-radius: 10px;
-  text-align: center;
-  width: 300px;
+  }
+  .btn-green-flat a {
   text-decoration: none;
   font-weight: 400;
   font-size: 20px;
-	color: $grey-01;
+  color: $grey-05;
 }
-
 .btn-green-flat :hover {
   color: $grey-05;
 }
