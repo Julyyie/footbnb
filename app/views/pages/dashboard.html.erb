@@ -2,13 +2,17 @@
   <h1>Mon profil</h1>
   <p>Bienvenue <%= current_user.first_name %></p>
 
+  <div class="btn-green-flat">
+<%= link_to "Create a player", new_player_path %>
+  </div>
+
   <%#--------------------- Recruiting -------------------------------------------------------%>
 
   <h2>Players I recruited</h2>
 
   <div class="cards-dash">
     <% @my_bookings.each do |booking| %>
-      <div class="card-product">
+      <div class="card-product my-2">
         <% num = rand(1..5) %>
         <%= image_tag "player_0#{num}.jpg" %>
         <div class="card-product-infos">
@@ -22,79 +26,41 @@
   </div>
   <%#--------------------- Recruiting -------------------------------------------------------%>
   <%#--------------------- Created players -------------------------------------------------------%>
-
+<hr class="my-5">
 
   <h2>My players</h2>
 
 
   <div class="my-player-card">
-    <div class="my-player-img">
-      <img src="https://s.hs-data.com/bilder/spieler/gross/284095.jpg" alt="">
-    </div>
+
 
     <div class="card-info-dash">
       <% @my_players.each do |player| %>
-      <% if player.bookings.size > 0 %>
 
-      <div class="my-player-info">
-        <h2><%= player.name %></h2>
-        <h6>Price/day: <%= player.price %></h6>
-        <p><%= player.description %></p>
-        <div class="tags-dash">
-          <div class="tag-player"><p>Age: <%= player.age %></p></div>
-          <div class="tag-player"><p>Rating: <%= player.rating %></p></div>
-          <div class="tag-player"><p>Strong Foot: <%= player.strong_foot %></p></div>
-          <div class="tag-player"><p>Club: <%= player.club %></p></div>
-          <div class="tag-player"><p>Position: <%= player.position %></p></div>
+
+      <div class="card-product my-2">
+        <% num = rand(1..5) %>
+        <%= image_tag "player_0#{num}.jpg" %>
+        <div class="card-product-infos">
+          <h2><%= player.name  %></h2>
+          <p>Description:<%= player.description %> || Age: <%= player.age %> || Rating: <%= player.rating %></p>
+          <p>Strong Foot: <%= player.strong_foot %> || Club: <%= player.club %> || </p>
+          <h6>Price/day: <%= player.price %></h6>
         </div>
-        <div class="my-player-bookings">
-        <%player.bookings.each do |booking| %>
-        <div class="my-player-booked">
-        <p>Booked By: <%= booking.user.first_name %></p>
-          <p><%= booking.status %></p>
-          <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch}, class:"btn btn-green-tiny" %>
-          <%= link_to "Decline", decline_path(booking), data: {turbo_method: :patch}, class:"btn btn-grey-stroke"%>
-          </div>
-          <% end %>
-
-
-
       </div>
-  </div>
 
 
-
-
-
-
-
-
+        <div class="my-player-bookings ">
+          <%player.bookings.each do |booking| %>
+            <div class="my-player-booked border">
+            <p>Booked By: <%= booking.user.email %></p>
+              <p><%= booking.status %></p>
+              <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch}, class:"btn btn-green-tiny" %>
+              <%= link_to "Decline", decline_path(booking), data: {turbo_method: :patch}, class:"btn btn-grey-stroke"%>
+              </div>
+            <% end %>
+          </div>
+      </div>
     </div>
-
-
-
   <% end %>
-
-    <% end %>
   </div>
-
-
-
-
-
-<div class="btn-green-flat">
-<%= link_to "Create a player", new_player_path %>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>

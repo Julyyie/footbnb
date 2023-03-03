@@ -61,6 +61,6 @@ end
   end
 
   def player_params
-    params.require(:player).permit(:name, :club, :position, :rating, :age, :description, :price, :strong_foot, :player_photo)
+    params.require(:player).permit(:name, :club, :position, :rating, :age, :description, :price, :strong_foot, :photo)
   end
 end
