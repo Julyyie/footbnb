@@ -93,14 +93,14 @@
 
      <div class="cards">
 
-
-    <% @recent_players.each do |player| %>
-        <div class="card-player">
-          <% num = rand(1..5) %>
-          <%= image_tag "player_0#{num}.jpg", class: 'image-player' %>
-
-
-          <div class="card-player-info">
+      <% @players.each do |player| %>
+        <div>
+          <div class="card-player">
+          <%#= cl_image_tag player.user.player_photo.attached? ? player.user.player_photo.key : %>
+            <% num = rand(1..5) %>
+            <%= image_tag "player_0#{num}.jpg" %>
+          </div>
+          <div class="card-info p-3">
             <div>
               <h2><%= player.name %></h2>
               <p><%= player.description %></p>
