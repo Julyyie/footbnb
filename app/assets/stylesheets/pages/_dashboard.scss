@@ -4,6 +4,9 @@
   margin-right: 50px;
 }
 
+.card-player-dashboard {
+  padding-right: 50px;
+}
 .user-rent {
   margin-right: 20px;
 }
@@ -15,10 +18,25 @@ h2 {
   font-size: 40px;
 }
 
+h5 {
+  font-size: 36px;
+  font-weight: 500;
+}
+
 p {
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 300;
   color: $grey-04;
+}
+
+.card-info-dash {
+  padding-right: 50px;
+  padding-left: 20px;
+}
+.card-info-dash p {
+  font-size: 16px;
+  font-weight: 300;
+  padding-right: 100px;
 }
 
 .status-dash {
@@ -37,17 +55,4 @@ p {
 
 .status-p {
   margin: 0 !important;
-}
-
-.messages {
-  margin-top: 30px;
-
-}
-.messages-dash {
-  display: flex;
-  align-items: center;
-  padding: 70px 20px;
-  background-color: $grey-05;
-  border-radius: 10px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
