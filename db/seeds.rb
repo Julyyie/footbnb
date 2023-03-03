@@ -8,37 +8,13 @@
 
 require "faker"
 
-# Créer des utilisateurs
-# user1 = etc
-
+Booking.destroy_all
 Player.destroy_all
 User.destroy_all
 
 puts "start"
 puts "start creating users & players"
-# 10.times do
-#   User.create!(
-#     first_name: Faker::Name.first_name,
-#     last_name:  Faker::Name.last_name,
-#     email: Faker::Internet.email,
-#     password: "mdpmdp"
-#   )
-# end
-# puts "finish seeds user"
 
-# puts "start seeding players"
-
-# 30.times do
-#   name = Faker::Sports::Football.player
-#   player = Player.find_by(name: name)
-
-#   if player.nil?
-#     Player.create!(name: Faker::Sports::Football.player, rating: rand(50..100),
-#                   club: Faker::Sports::Football.team, position: Faker::Sports::Football.position,
-#                   age: rand(16..40), strong_foot: ["left foot", "right foot"].sample, user: User.all.sample,
-#                 )
-#   end
-# end
 
 user1 = User.create!(first_name: "Mehdi", last_name: "Sabil", email: "mehdi.sabil@hotmail.com", password: "mdpmdp")
 user2 = User.create!(first_name: "Julie", last_name: "Juillet", email: "julie.juillet@hotmail.com", password: "mdpmdp")
