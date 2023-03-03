@@ -1,8 +1,4 @@
-
-
-
 <%#--------------------- Banner -------------------------------------------------------%>
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner_image.jpg"  %>);">
   <div class="container">
     <div class="text">
@@ -11,10 +7,9 @@
         <%= form_with url: root_path, method: :get, class: "searchbar d-flex" do %>
         <%= text_field_tag :query,
         params[:query],
-        class: "form-control",
+       class: "form-control mr-2",
         placeholder: "Search a player by name"%>
         <%= submit_tag "Search", class: "btn btn-success"%>
-
 <% end %>
         <div class="btn-green-flat">
           <%= link_to "See all players", '#all-players', class: "text-btn-green-flat"%>
@@ -22,27 +17,13 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
 <%#--------------------- Banner -------------------------------------------------------%>
-
 <div class="container-body">
   <%#--------------------- Add 3 latest players -------------------------------------------------------%>
-
   <div class="title">
     <h2>Freshly added players</h2>
   </div>
-
-
-
     <div class="cards">
-
-
       <% @recent_players.each do |player| %>
         <div>
           <div class="card-player">
@@ -54,26 +35,20 @@
               <h2><%= player.name %></h2>
               <p>description du joueur</p>
             </div>
-
             <h2 class="cards-price"></h2>
             <h3><%= player.rating %></h3>
-
             <%=link_to "Rent", player_path(player), class: 'btn btn-ghost' %>
           </div>
         </div>
       <% end %>
     </div>
-
-
 <hr>
   <%#--------------------- Add 3 latest players -------------------------------------------------------%>
   <%#--------------------- Filters -------------------------------------------------------%>
-
   <div class="title" id='all-players'>
     <h2>All players</h2>
     <p>Search by</p>
   </div>
-
   <div id="myBtnContainer">
     <button class="btn active" onclick="filterSelection('all')"> Show all</button>
     <button class="btn" onclick="filterSelection('age')"> Age</button>
@@ -82,15 +57,9 @@
     <button class="btn" onclick="filterSelection('position')"> Position</button>
     <button class="btn" onclick="filterSelection('club')"> Club</button>
   </div>
-
   <%#--------------------- Filters -------------------------------------------------------%>
-
   <%# ------------------------ cards ------------------------------------------------------------------%>
-
-
     <div class="cards">
-
-
       <% @players.each do |player| %>
         <div>
           <div class="card-player">
@@ -102,16 +71,12 @@
               <h2><%= player.name %></h2>
               <p>description du joueur</p>
             </div>
-
             <h2 class="cards-price"></h2>
             <h3><%= player.rating %></h3>
-
             <%=link_to "Rent", player_path(player), class: 'btn btn-ghost' %>
           </div>
         </div>
       <% end %>
     </div>
-
   <%# ------------------------ cards ------------------------------------------------------------------%>
-
 </div>
