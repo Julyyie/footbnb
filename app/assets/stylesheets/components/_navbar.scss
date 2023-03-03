@@ -1,5 +1,23 @@
-.container-fluid-navbar {
-  padding: 20px 100px;
+// .container-fluid-navbar {
+//   padding: 20px 100px;
+//   background-color: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 50px;
+//   padding-right: 50px;
+//   position: fixed;
+// }
+
+
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -7,7 +25,5 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 50px;
-  padding-right: 50px;
-  position: fixed;
+  width: 40px;
 }

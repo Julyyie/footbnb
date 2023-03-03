@@ -1,71 +1,104 @@
-
-<div class="container-fluid-dash">
+<div class="container">
   <h1>Mon profil</h1>
-  <p>Bienvenue user.first_name</p>
+  <p>Bienvenue <%= current_user.first_name %></p>
 
-  <div class="row mt-5">
+  <h2>Players I recruited</h2>
 
-    <div class="user-rents col-8">
-    <h2>My rents</h2>
 
-      <% @my_bookings.each do |booking| %>
 
-        <%= booking.player.name  %>
-        <%= booking.rent_start %>
-        <%= booking.rent_ending %>
-        <%= booking.status %>
-      <% end %>
-
-      <div class="card-player-dashboard d-flex">
-
-      <img src="/assets/player_01-7b4d48d04f8ec9e04260d78da2cb2a68ba19f19cf574ef5b30e79ff9a682ccc1.jpg" style="
-    width: 590px; height: 350px;">
-
-         <div class="card-info-dash p-3">
-            <% @my_players.each do |player| %>
-              <h2><%= player.name %></h2>
-              <p>description du joueur</p>
-              <%= player.rating %>
-
-              <div class="tags-dash p-3 d-flex">
-                <div class="tag-dash"><%= player.age %></div>
-                <div class="tag-dash"><%= player.rating %></div>
-                <div class="tag-dash"><%= player.strong_foot %></div>
-                <div class="tag-dash"><%= player.club %></div>
-                <div class="tag-dash"><%= player.position %></div>
-              </div>
-
-            <div class="price-dash p-3 d-flex">
-              <h2>100€</h2>
-            </div>
-            <div>
-          </div>
-            <%= link_to "edit", edit_player_path(player), class: "btn btn-secondary" %>
-          <% end %>
+  <div class="cards">
+    <% @my_bookings.each do |booking| %>
+      <div class="card-product">
+        <% num = rand(1..5) %>
+        <%= image_tag "player_0#{num}.jpg" %>
+        <div class="card-product-infos">
+          <h2><%= booking.player.name  %></h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+          <p>From: <%= booking.rent_start %> to <%= booking.rent_ending %> </p>
+          <p>Status: <%= booking.status %> </p>
         </div>
       </div>
-
-
-    </div>
-
-    <div class="user-infos col-4">
-    <div class="status">
-      <h2>Status</h2>
-        <div class="status-dash">
-        <i class="fa-regular fa-circle"></i>
-        <p id="status-p">You have .. pending status</p>
-        <%# methode status %>
-        </div>
-      </div>
-      <div class="messages">
-        <h2>Messages</h2>
-        <div class="messages-dash">
-        <p>You have 0 new message</p>
-        <%# methode status %>
-        </div>
-      </div>
-      <%= link_to "Create a player", new_player_path %>
-    </div>
-
+    <% end %>
   </div>
+
+
+
+
+
+
+<h2>My players</h2>
+
+
+
+
+
+  <div class="card-info-dash">
+    <% @my_players.each do |player| %>
+
+
+  <% if player.bookings.size > 0 %>
+
+
+    <div class="border">
+      <h5><%= player.name %></h5>
+      <h6>Price/day: <%= player.price %></h6>
+      <p>description du joueur You can move this code into a module and include it into any model that supports filtering:</p>
+
+      <div class="tags-dash d-flex">
+        <div class="tag-dash"><p>Age: <%= player.age %></p></div>
+        <div class="tag-dash"><p>Rating: <%= player.rating %></p></div>
+        <div class="tag-dash"><p>Strong Foot: <%= player.strong_foot %></p></div>
+        <div class="tag-dash"><p>Club: <%= player.club %></p></div>
+        <div class="tag-dash"><p>Position: <%= player.position %></p></div>
+      </div>
+      <div class="bookings">
+      <%player.bookings.each do |booking| %>
+      <div class="border">
+      <p>Booked By: <%= booking.user.first_name %></p>
+        <p><%= booking.status %></p>
+        <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch} %>
+        <%= link_to "Decline", decline_path(booking), data: {turbo_method: :patch}  %>
+        </div>
+        <% end %>
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+  <% end %>
+
+    <% end %>
+  </div>
+
+
+
+
+
+<div class="btn-green-flat">
+<%= link_to "Create a player", new_player_path %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 </div>

@@ -5,14 +5,17 @@ skip_before_action :authenticate_user!, only: :index
 #skip before action only [show index]
 
 def index
+  @recent_players = Player.last(3)
+
   if params[:query].present?
     sql_query = <<~SQL
       players.name ILIKE :query
     SQL
-    @players = Player.joins(:director).where(sql_query, query: "%#{params[:query]}%")
+    @players = Player.where(sql_query, query: "%#{params[:query]}%")
   else
     @players = Player.all
   end
+
 end
 
 

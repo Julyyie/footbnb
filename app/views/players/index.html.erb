@@ -1,12 +1,5 @@
 
-<%= form_with url: user_session_path, method: :get, class: "searchbar d-flex" do %>
-  <%= text_field_tag :query,
-  params[:query],
-  class: "form-control",
-  placeholder: "Search a player by name"%>
-  <%= submit_tag "Search"%>
 
-<% end %>
 
 <%#--------------------- Banner -------------------------------------------------------%>
 
@@ -15,12 +8,26 @@
     <div class="text">
         <h4>We celebrate Football at its finest.</h4>
         <h1>Top rating of the day</h1>
+        <%= form_with url: root_path, method: :get, class: "searchbar d-flex" do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search a player by name"%>
+        <%= submit_tag "Search", class: "btn btn-success"%>
+
+<% end %>
         <div class="btn-green-flat">
           <%= link_to "See all players", '#all-players', class: "text-btn-green-flat"%>
         </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
 
 <%#--------------------- Banner -------------------------------------------------------%>
 
@@ -29,13 +36,36 @@
 
   <div class="title">
     <h2>Freshly added players</h2>
-    <p>Base ligne sur une ou deux lignes mais pas obligatoire c’est juste pour se représenter </p>
   </div>
 
-  <div class="btn-green-flat">
-    <%= link_to "See more", '#all-players', class: "text-btn-green-flat"%>
-  </div>
 
+
+    <div class="cards">
+
+
+      <% @recent_players.each do |player| %>
+        <div>
+          <div class="card-player">
+            <% num = rand(1..5) %>
+            <%= image_tag "player_0#{num}.jpg" %>
+          </div>
+          <div class="card-info p-3">
+            <div>
+              <h2><%= player.name %></h2>
+              <p>description du joueur</p>
+            </div>
+
+            <h2 class="cards-price"></h2>
+            <h3><%= player.rating %></h3>
+
+            <%=link_to "Rent", player_path(player), class: 'btn btn-ghost' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+
+<hr>
   <%#--------------------- Add 3 latest players -------------------------------------------------------%>
   <%#--------------------- Filters -------------------------------------------------------%>
 
