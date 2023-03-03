@@ -46,8 +46,9 @@
 
     <% @recent_players.each do |player| %>
         <div class="card-player">
-          <% num = rand(1..5) %>
-          <%= image_tag "player_0#{num}.jpg", class: 'image-player' %>
+          <% if player.player_photo %>
+            <%= image_tag player.player_photo, class: 'image-player' %>
+          <% end %>
 
 
           <div class="card-player-info">
@@ -89,6 +90,7 @@
   <%#--------------------- Filters -------------------------------------------------------%>
 
   <%# ------------------------ cards ------------------------------------------------------------------%>
+
 
 
   <div class="cards">
