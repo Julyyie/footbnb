@@ -64,6 +64,7 @@
       <% @players.each do |player| %>
         <div>
           <div class="card-player">
+          <%#= cl_image_tag player.user.player_photo.attached? ? player.user.player_photo.key : %>
             <% num = rand(1..5) %>
             <%= image_tag "player_0#{num}.jpg" %>
           </div>
